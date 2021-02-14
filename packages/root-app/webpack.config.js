@@ -26,6 +26,9 @@ module.exports = (webpackConfigEnv, argv) => {
       ...defaultConfig.plugins,
       new HtmlWebpackPlugin({
         inject: false,
+        // In local dev, WDS will serve index.html in place of 404 
+        // in GitHub Pages, use 404.html as a catch-all
+        filename: isLocal ? 'index.html' : '404.html',
         template: "src/index.ejs",
         templateParameters: {
           isLocal,
