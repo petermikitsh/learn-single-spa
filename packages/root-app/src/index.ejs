@@ -34,6 +34,10 @@
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
+  <!-- Multiple import maps are supported with SystemJS.
+    
+    See https://github.com/systemjs/systemjs/blame/895ebaf41c3d01025256934cd0fd78f3b2eb70de/docs/import-maps.md#L179
+  -->
   <% if (isLocal) { %>
     <script type="systemjs-importmap">
     {
