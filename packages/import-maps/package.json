@@ -1,7 +1,7 @@
 {
   "name": "@exampleorg/import-maps",
   "license": "MIT",
-  "version": "0.0.0-canary-f520365",
+  "version": "0.0.0",
   "scripts": {
     "deploy": "./scripts/deploy.sh"
   }

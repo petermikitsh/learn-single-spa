@@ -1,7 +1,7 @@
 {
   "name": "@exampleorg/app2",
   "license": "MIT",
-  "version": "0.0.0-canary-f520365",
+  "version": "0.0.0",
   "scripts": {
     "clean": "rimraf dist",
     "ng": "ng",
