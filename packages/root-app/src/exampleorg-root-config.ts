@@ -12,13 +12,13 @@ import { registerApplication, start } from "single-spa";
 registerApplication({
   name: "@exampleorg/app1",
   app: () => System.import("@exampleorg/app1"),
-  activeWhen: ["/app1"],
+  activeWhen: ["/learn-single-spa/app1"],
 });
 
 registerApplication({
   name: "@exampleorg/app2",
   app: () => System.import("@exampleorg/app2"),
-  activeWhen: ["/app2"],
+  activeWhen: ["/learn-single-spa/app2"],
 });
 
 start({
