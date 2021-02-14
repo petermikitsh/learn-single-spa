@@ -6,4 +6,6 @@ set -x
 # Bail on first error
 set -e
 
-npx --no-install gh-pages --dist dist --dest .
+yarn run gh-pages --add \
+  --dist dist \
+  --dest .
