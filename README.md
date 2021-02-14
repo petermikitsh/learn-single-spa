@@ -29,7 +29,8 @@ Pre-req's:
 ### Local Development (`yarn start`)
 
 1. Run `yarn start`
-2. Go to https://0.0.0.0:9000/
+2. In the CLI, select apps to run. Import maps for the selected apps will point to your local webpack servers. All remaining apps will use staging import maps.
+3. Go to https://0.0.0.0:9000/
 
 #### Change import maps
 
@@ -38,8 +39,8 @@ Select environment import maps via `?env=stg` or `?env=prod`.
 #### Servers
 
 | Hostname     | Description           | Path                   |
-|--------------|-----------------------|------------------------|
-| 0.0.0.0:9000 | Root App              | **                     |
+| ------------ | --------------------- | ---------------------- |
+| 0.0.0.0:9000 | Root App              | \*\*                   |
 | 0.0.0.0:9001 | App1 (React App)      | /learn-single-spa/app1 |
 | 0.0.0.0:9002 | App2 (Angular 11 App) | /learn-single-spa/app2 |
 | 0.0.0.0:9003 | App3 (React App)      | /learn-single-spa      |
@@ -48,7 +49,7 @@ Each microfrontend server only serves its bundle.
 
 ## Releases
 
-In a local environment, a canary release will be pushed to the gh-pages branch.
+Releases are pushed to the `gh-pages` branch. In this example project, `gh-pages` is analogous to a CDN.
 
 ```
 yarn run cicd
@@ -56,8 +57,13 @@ yarn run cicd
 
 ## Deployments
 
-1. Update the `packages/imports-maps/importmap.json` with versions to use.
-2. Run `yarn deploy`
+Import maps are defined on a per-enviornment basis, e.g: `importmap.stg.json` and `importmap.prod.json`, allowing apps to be deployed asynchronously. Which import map to use is computed at runtime, with highest to lowest precendence:
+
+- Query parameter `env`
+- Host inspection
+
+1. Update the `packages/imports-maps/importmap.{env}.json` with versions to use.
+2. Run `yarn deploy`. **All** import map files will be deployed.
 
 ## Learnings
 
