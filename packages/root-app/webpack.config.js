@@ -20,29 +20,29 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     output: {
       ...defaultConfig.output,
-      ...(!isLocal & {
-        filename: `${
-          defaultConfig.output.filename.split(".js")[0]
-        }.[contenthash].js`,
-      }),
+      ...(!isLocal &
+        {
+          filename: `${
+            defaultConfig.output.filename.split(".js")[0]
+          }.[contenthash].js`,
+        }),
     },
     plugins: [
       ...defaultConfig.plugins,
       new HtmlWebpackPlugin({
         inject: false,
-        // In local dev, WDS will serve index.html in place of 404 
+        // In local dev, WDS will serve index.html in place of 404
         // in GitHub Pages, use 404.html as a catch-all
-        filename: isLocal ? 'index.html' : '404.html',
+        filename: isLocal ? "index.html" : "404.html",
         template: "src/index.ejs",
         templateParameters: {
           isLocal,
           orgName,
-          FEATURE_APP_NAME: process.env.FEATURE_APP_NAME,
-          FEATURE_APP_PORT: process.env.FEATURE_APP_PORT,
+          FEATURE_APP_DATA: process.env.FEATURE_APP_DATA,
         },
       }),
     ],
-    stats: 'errors-warnings',
+    stats: "errors-warnings",
   };
 
   return final;

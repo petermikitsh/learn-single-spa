@@ -52,17 +52,14 @@
     <script id="dev-import-map-overrides">
       var script = document.createElement('script');
       script.setAttribute('type', 'systemjs-importmap');
-      const featureAppName = "<%= FEATURE_APP_NAME %>";
-      const featureAppPort = "<%= FEATURE_APP_PORT %>";
-
-      if (featureAppName && featureAppPort) {
-        script.innerHTML = JSON.stringify({
-          imports: {
-            '@exampleorg/root-config': 'http://0.0.0.0:9000/exampleorg-root-config.js',
-            [`@exampleorg/` + featureAppName]: 'http://0.0.0.0:' + featureAppPort + '/main.js',
-          },
-        });
-      }
+      const featureAppData = JSON.parse('<%= FEATURE_APP_DATA %>');
+      const overrides = {
+        '@exampleorg/root-config': 'http://0.0.0.0:9000/exampleorg-root-config.js',
+      };
+      Object.entries(featureAppData).forEach(([appName, port]) => {
+        overrides[`@exampleorg/${appName}`]= `http://0.0.0.0:${port}/main.js`;
+      });
+      script.innerHTML = JSON.stringify({ imports: overrides });
       document.querySelector('#dev-import-map-overrides').after(script);
     </script>
   <% } %>
