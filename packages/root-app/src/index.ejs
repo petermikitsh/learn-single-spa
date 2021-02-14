@@ -76,14 +76,22 @@
     System.import('@exampleorg/root-config');
   </script>
   <script>
-    const devHostnames = ['0.0.0.0', 'localhost'];
+    var devHostnames = ['0.0.0.0', 'localhost'];
 
     window.ENABLE_DEV_MODE = function () {
       importMapOverrides.enableUI();
     }
 
-    if (devHostnames.indexOf(window.location.hostname) > -1) {
+    var isDevDomain = devHostnames.indexOf(window.location.hostname) > -1;
+    var hasOverride = Object.keys(localStorage).some(function (item) {
+      return item.startsWith('import-map-override');
+    });
+
+    if (isDevDomain || hasOverride) {
       window.ENABLE_DEV_MODE();
+    }
+
+    if (isDevDomain) {
       window.importMapOverrides.addExternalOverride(
         "https://petermikitsh.github.io/learn-single-spa/importmap.json"
       );
