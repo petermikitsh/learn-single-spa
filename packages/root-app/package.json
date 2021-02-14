@@ -8,7 +8,8 @@
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write \"./**\"",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "version": "./scripts/version.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -11,9 +11,9 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:single-spa:app2": "ng build app2 --prod --deploy-url http://localhost:4200/",
-    "serve:single-spa:app2": "ng s --project app2 --disable-host-check --port 4200 --deploy-url http://localhost:4200/ --live-reload false"
+    "serve:single-spa:app2": "ng s --project app2 --disable-host-check --port 4200 --deploy-url http://localhost:4200/ --live-reload false",
+    "version": "./scripts/version.sh"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~11.2.0",
     "@angular/common": "~11.2.0",
