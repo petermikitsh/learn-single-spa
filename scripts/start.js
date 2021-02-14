@@ -4,6 +4,12 @@ const { spawn } = require('child_process');
 const prompts = require('prompts');
 const pidTree = require('pidtree');
 
+const portMaps = {
+  app1: 9001,
+  app2: 9002,
+  app3: 9003,
+};
+
 (async () => {
   const { featureApp } = await prompts([
     {
@@ -12,9 +18,9 @@ const pidTree = require('pidtree');
       message: 'Choose a Feature App to work on:',
       choices: [
         { title: 'All (not recommended)', value: 'all' },
-        { title: 'app1 (Port 9001)', value: 'app1' },
-        { title: 'app2 (Port 9002)', value: 'app2' },
-        { title: 'app3 (Port 9003)', value: 'app3' },
+        { title: `app1 (Port ${portMaps.app1})`, value: 'app1' },
+        { title: `app2 (Port ${portMaps.app2})`, value: 'app2' },
+        { title: `app3 (Port ${portMaps.app3})`, value: 'app3' },
       ],
     },
   ]);
@@ -30,6 +36,10 @@ const pidTree = require('pidtree');
     app3: '*/{app3,root-config}',
   };
 
+  if (!process.env.HTTPS) {
+    console.log('Live Server at http://0.0.0.0:9000/');
+  }
+
   const startProcess = spawn(
     'lerna',
     [
@@ -44,6 +54,8 @@ const pidTree = require('pidtree');
       stdio: 'inherit',
       env: {
         ...process.env,
+        FEATURE_APP_NAME: featureApp,
+        FEATURE_APP_PORT: portMaps[featureApp],
       },
     },
   );

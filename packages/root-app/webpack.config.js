@@ -37,6 +37,8 @@ module.exports = (webpackConfigEnv, argv) => {
         templateParameters: {
           isLocal,
           orgName,
+          FEATURE_APP_NAME: process.env.FEATURE_APP_NAME,
+          FEATURE_APP_PORT: process.env.FEATURE_APP_PORT,
         },
       }),
     ],
