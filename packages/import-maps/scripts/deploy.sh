@@ -8,7 +8,8 @@ set -e
 
 BASE_DIR=$(dirname $0)
 SUBPACKAGE_DIR="$(dirname $( cd "$BASE_DIR" ; pwd -P ))"
-SRC_GLOB=$SUBPACKAGE_DIR/importmap.json
 
-npx --no-install gh-pages --dist $SRC_GLOB --dest importmap.json
-
+yarn run gh-pages \
+  --dist $SUBPACKAGE_DIR \
+  --src "importmap.json" \
+  --dest .
