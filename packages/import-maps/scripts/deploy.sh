@@ -11,5 +11,5 @@ SUBPACKAGE_DIR="$(dirname $( cd "$BASE_DIR" ; pwd -P ))"
 
 yarn run gh-pages --add \
   --dist $SUBPACKAGE_DIR \
-  --src "importmap.json" \
+  --src "importmap.*.json" \
   --dest .
