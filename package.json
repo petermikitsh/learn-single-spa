@@ -14,7 +14,7 @@
     "clean": "lerna run clean --parallel",
     "deploy": "./scripts/deploy.sh",
     "start": "./scripts/start.js",
-    "start:ssl": "HTTPS=1 ./scripts/start.js"
+    "start:https": "HTTPS=1 ./scripts/start.js"
   },
   "private": true,
   "devDependencies": {
