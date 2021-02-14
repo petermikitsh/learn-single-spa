@@ -17,8 +17,9 @@ Pre-req's:
 
 1. Go to live site: https://petermikitsh.github.io/learn-single-spa
 2. In the console: `window.ENABLE_DEV_MODE()`
-3. Select import map panel, select app to develop. For URL, enter port number and select "Apply Override".
-4. Refresh the webpage.
+3. In your terminal, select your feature app with `yarn start:ssl` (note the port number).
+4. Select import map panel, select app to develop. For URL, enter port number and select "Apply Override".
+5. Refresh the webpage.
 
 ## Local Development (`yarn start`)
 
