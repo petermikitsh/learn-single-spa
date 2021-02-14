@@ -12,7 +12,7 @@ module.exports = (webpackConfigEnv, argv) => {
     ...defaultConfig,
     devServer: {
       ...defaultConfig.devServer,
-      port: "8000",
+      port: "9001",
     },
     externals: [/^@exampleorg\//],
   };

@@ -10,8 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa:app2": "ng build app2 --prod --deploy-url http://localhost:4200/",
-    "serve:single-spa:app2": "ng s --project app2 --disable-host-check --port 4200 --deploy-url http://localhost:4200/ --live-reload false",
+    "build:single-spa:app2": "ng build app2 --prod --deploy-url http://localhost:9002/",
+    "serve:single-spa:app2": "ng s --project app2 --disable-host-check --port 9002 --deploy-url http://localhost:9002/ --live-reload false",
     "version": "./scripts/version.sh"
   },
   "dependencies": {

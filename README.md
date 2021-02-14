@@ -11,12 +11,12 @@ yarn start
 
 ## Servers
 
-| Hostname     | Description           |
-| ------------ | --------------------- |
-| 0.0.0.0:9000 | Root App              |
-| 0.0.0.0:8000 | App1 (React App)      |
-| 0.0.0.0:4200 | App2 (Angular 11 App) |
-| 0.0.0.0:8002 | App3 (React App)      |
+| Hostname     | Description           | Path                   |
+|--------------|-----------------------|------------------------|
+| 0.0.0.0:9000 | Root App              | **                     |
+| 0.0.0.0:9001 | App1 (React App)      | /learn-single-spa/app1 |
+| 0.0.0.0:9002 | App2 (Angular 11 App) | /learn-single-spa/app2 |
+| 0.0.0.0:9003 | App3 (React App)      | /learn-single-spa      |
 
 ## Releases
 
@@ -30,3 +30,7 @@ yarn run cicd
 
 1. Update the `packages/imports-maps/importmap.json` with versions to use.
 2. Run `yarn deploy`
+
+## Learnings
+
+- When launching a new feature app, update the import map first before deploying the root config. Otherwise, your root config will reference an app that cannot be resolved via import map.

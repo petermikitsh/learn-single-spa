@@ -44,9 +44,9 @@
       {
         "imports": {
           "@exampleorg/root-config": "//localhost:9000/exampleorg-root-config.js",
-          "@exampleorg/app1": "//localhost:8000/exampleorg-app1.js",
-          "@exampleorg/app2": "//localhost:4200/main.js",
-          "@exampleorg/app3": "//localhost:8002/exampleorg-app3.js"
+          "@exampleorg/app1": "//localhost:9001/exampleorg-app1.js",
+          "@exampleorg/app2": "//localhost:9002/exampleorg-app2.js",
+          "@exampleorg/app3": "//localhost:9003/exampleorg-app3.js"
         }
       }
     </script>
@@ -75,9 +75,19 @@
   <script>
     System.import('@exampleorg/root-config');
   </script>
-  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
   <script>
-    importMapOverrides.enableUI();
+    const devHostnames = ['0.0.0.0', 'localhost'];
+
+    window.ENABLE_DEV_MODE = function () {
+      importMapOverrides.enableUI();
+    }
+
+    if (devHostnames.indexOf(window.location.hostname) > -1) {
+      window.ENABLE_DEV_MODE();
+      window.importMapOverrides.addExternalOverride(
+        "https://petermikitsh.github.io/learn-single-spa/importmap.json"
+      );
+    }
   </script>
 </body>
 
