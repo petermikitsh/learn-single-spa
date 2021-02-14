@@ -3,12 +3,16 @@
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
       }
     }</script><link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script"><script id="env-import-map">var params = new URLSearchParams(window.location.search);
-    // Valid envs are 'stg' and 'prod'
-    var env = params.get('env') || 'prod';
+    var validEnvs = ['stg', 'prod'];
+    var userSuppliedEnv = params.get('env');
+    if (userSuppliedEnv && validEnvs.indexOf(userSuppliedEnv) === -1) {
+      console.error('%c🚨 Invalid import map environment specified. Use one of: ' + JSON.stringify(validEnvs), "font-size: 20px");
+    }
+    var resolvedEnv = userSuppliedEnv || 'prod';
     var script = document.createElement('script');
-    script.setAttribute('src', 'https://petermikitsh.github.io/learn-single-spa/importmap.' + env + '.json')
+    script.setAttribute('src', 'https://petermikitsh.github.io/learn-single-spa/importmap.' + resolvedEnv + '.json')
     script.setAttribute('type', 'systemjs-importmap');
-    document.querySelector('#env-import-map').after(script);</script><script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script><script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script><script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script><script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script></head><body><main></main><script>System.import('@exampleorg/root-config');</script><script>var devHostnames = ['0.0.0.0', 'localhost'];
+    document.querySelector('#env-import-map').after(script);</script><script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script><script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script><script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script><script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script><style>html, body { margin: 0; }</style></head><body><main></main><script>System.import('@exampleorg/root-config');</script><script>var devHostnames = ['0.0.0.0', 'localhost'];
 
     window.ENABLE_DEV_MODE = function () {
       importMapOverrides.enableUI();
@@ -21,10 +25,4 @@
 
     if (isDevDomain || hasOverride) {
       window.ENABLE_DEV_MODE();
-    }
-
-    if (isDevDomain) {
-      window.importMapOverrides.addExternalOverride(
-        "https://petermikitsh.github.io/learn-single-spa/importmap.stg.json"
-      );
     }</script></body></html>
