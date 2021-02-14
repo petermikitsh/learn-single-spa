@@ -1,7 +1,9 @@
 {
   "name": "@exampleorg/app2",
+  "license": "MIT",
   "version": "0.0.0",
   "scripts": {
+    "clean": "rimraf dist",
     "ng": "ng",
     "start": "npm run serve:single-spa:app2",
     "build": "npm run build:single-spa:app2",
