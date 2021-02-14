@@ -30,12 +30,12 @@ else
     yarn clean
     yarn build
 
-    # npx --no-install lerna version $RELEASE_NAME \
-    #   --force-publish \
-    #   --no-push \
-    #   --exact \
-    #   --yes
-    # git push --follow-tags
+    npx --no-install lerna version $RELEASE_NAME \
+      --force-publish \
+      --no-push \
+      --exact \
+      --yes
+    git push --follow-tags
   fi
 fi
 
