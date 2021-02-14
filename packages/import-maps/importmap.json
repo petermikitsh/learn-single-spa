@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "@exampleorg/root-config": "/exampleorg-root-config.js",
+    "@exampleorg/app1": "/@exampleorg/app1/0.0.0/exampleorg-app1.js",
+    "@exampleorg/app2": "/@exampleorg/app2/0.0.0/main.js"
+  }
+}
