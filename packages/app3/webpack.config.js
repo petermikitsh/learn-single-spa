@@ -16,6 +16,10 @@ module.exports = (webpackConfigEnv, argv) => {
       https: Boolean(process.env.HTTPS),
     },
     externals: [/^@exampleorg\//],
+    output: {
+      ...defaultConfig.output,
+      filename: 'main.js',
+    },
     stats: 'errors-warnings',
   };
 
