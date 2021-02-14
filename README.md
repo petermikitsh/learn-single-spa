@@ -16,6 +16,7 @@ yarn start
 | 0.0.0.0:9000 | Root App              |
 | 0.0.0.0:8000 | App1 (React App)      |
 | 0.0.0.0:4200 | App2 (Angular 11 App) |
+| 0.0.0.0:8002 | App3 (React App)      |
 
 ## Releases
 

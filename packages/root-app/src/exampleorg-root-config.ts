@@ -21,6 +21,13 @@ registerApplication({
   activeWhen: ["/learn-single-spa/app2"],
 });
 
+registerApplication({
+  name: "@exampleorg/app3",
+  app: () => System.import("@exampleorg/app3"),
+  activeWhen: ["/learn-single-spa"],
+});
+
+
 start({
   urlRerouteOnly: true,
 });
