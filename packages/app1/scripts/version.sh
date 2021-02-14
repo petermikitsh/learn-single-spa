@@ -11,4 +11,4 @@ SUBPACKAGE_DIR="$(dirname $( cd "$BASE_DIR" ; pwd -P ))"
 CURR_VERSION=$(node -p "require('${SUBPACKAGE_DIR}/package.json').version")
 SRC_GLOB="$SUBPACKAGE_DIR/dist/!(*.html)"
 
-npx --no-install gh-pages --add --src $SRC_GLOB --dist @exampleorg/app1/${CURR_VERSION}
+npx --no-install gh-pages --add --src $SRC_GLOB --dest @exampleorg/app1/${CURR_VERSION}

@@ -10,5 +10,5 @@ BASE_DIR=$(dirname $0)
 SUBPACKAGE_DIR="$(dirname $( cd "$BASE_DIR" ; pwd -P ))"
 SRC_GLOB="$SUBPACKAGE_DIR/importmap.json"
 
-npx --no-install gh-pages --src $SRC_GLOB --dist importmap.json
+npx --no-install gh-pages --src $SRC_GLOB --dest importmap.json
 
