@@ -1,8 +1,8 @@
 {
   "imports": {
     "@exampleorg/root-config": "/learn-single-spa/exampleorg-root-config.js",
-    "@exampleorg/app1": "/learn-single-spa/@exampleorg/app1/0.0.5/exampleorg-app1.js",
-    "@exampleorg/app2": "/learn-single-spa/@exampleorg/app2/0.0.5/main.js",
-    "@exampleorg/app3": "/learn-single-spa/@exampleorg/app3/0.0.5/exampleorg-app3.js"
+    "@exampleorg/app1": "/learn-single-spa/@exampleorg/app1/0.0.6/exampleorg-app1.js",
+    "@exampleorg/app2": "/learn-single-spa/@exampleorg/app2/0.0.6/exampleorg-app2.js",
+    "@exampleorg/app3": "/learn-single-spa/@exampleorg/app3/0.0.6/exampleorg-app3.js"
   }
 }
