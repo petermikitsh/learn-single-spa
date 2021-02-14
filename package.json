@@ -9,6 +9,7 @@
     "build": "lerna run build --parallel",
     "cicd": "./scripts/cicd.sh",
     "clean": "lerna run clean --parallel",
+    "deploy": "./scripts/deploy.sh",
     "start": "lerna run start --parallel"
   },
   "private": true,
