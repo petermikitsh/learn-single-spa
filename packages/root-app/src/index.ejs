@@ -39,19 +39,20 @@
     See https://github.com/systemjs/systemjs/blame/895ebaf41c3d01025256934cd0fd78f3b2eb70de/docs/import-maps.md#L179
   -->
   <% if (isLocal) { %>
+    <script type="systemjs-importmap" src="https://petermikitsh.github.io/learn-single-spa/importmap.json"></script>
     <script type="systemjs-importmap">
-    {
-      "imports": {
-        "@exampleorg/root-config": "//localhost:9000/exampleorg-root-config.js",
-        "@exampleorg/app1": "//localhost:8000/exampleorg-app1.js",
-        "@exampleorg/app2": "//localhost:4200/main.js"
+      {
+        "imports": {
+          "@exampleorg/root-config": "//localhost:9000/exampleorg-root-config.js",
+          "@exampleorg/app1": "//localhost:8000/exampleorg-app1.js",
+          "@exampleorg/app2": "//localhost:4200/main.js"
+        }
       }
-    }
-  </script>
-    <% } else { %>
-      <script type="systemjs-importmap" src="/learn-single-spa/importmap.json" ></script>
+    </script>
+   <% } else { %>
+      <!-- Add your organization's prod import map URL to this script's src  -->	
+      <script type="systemjs-importmap" src="/learn-single-spa/importmap.json"></script>
     <% } %>
-
       <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
