@@ -8,8 +8,6 @@ module.exports = (webpackConfigEnv, argv) => {
     argv,
   });
 
-  console.log(defaultConfig);
-
   const final = {
     ...defaultConfig,
     devServer: {

@@ -1,7 +1,9 @@
 {
   "name": "@exampleorg/app1",
+  "license": "MIT",
   "version": "0.0.0",
   "scripts": {
+    "clean": "rimraf dist",
     "start": "webpack serve",
     "start:standalone": "webpack serve --env standalone",
     "build": "webpack --mode=production",
