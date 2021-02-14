@@ -25,7 +25,7 @@ const portMaps = {
     },
   ]);
 
-  if (!featureApps) {
+  if (!featureApps?.length) {
     console.log("🚨 No feature app(s) selected");
     process.exit();
   }
