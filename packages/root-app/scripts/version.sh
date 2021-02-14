@@ -6,4 +6,4 @@ set -x
 # Bail on first error
 set -e
 
-npx --no-install gh-pages --src dist --dest /
+npx --no-install gh-pages --src dist --dest .
