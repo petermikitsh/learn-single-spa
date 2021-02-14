@@ -1,7 +1,9 @@
 {
   "name": "@exampleorg/root-config",
+  "license": "MIT",
   "version": "0.0.0",
   "scripts": {
+    "clean": "rimraf dist",
     "start": "webpack serve --port 9000 --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
