@@ -25,9 +25,9 @@ const pidTree = require('pidtree');
 
   const appToGlob = {
     all: '**',
-    app1: '*/{app1,root-app}',
-    app2: '*/{app2,root-app}',
-    app3: '*/{app3,root-app}',
+    app1: '*/{app1,root-config}',
+    app2: '*/{app2,root-config}',
+    app3: '*/{app3,root-config}',
   };
 
   const startProcess = spawn(

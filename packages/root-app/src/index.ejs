@@ -16,7 +16,6 @@
   <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
   <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
   <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
-
   <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
 
     1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
@@ -34,12 +33,17 @@
   </script>
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js" as="script">
 
-  <!-- Multiple import maps are supported with SystemJS.
-    
-    See https://github.com/systemjs/systemjs/blame/895ebaf41c3d01025256934cd0fd78f3b2eb70de/docs/import-maps.md#L179
-  -->
+  <!-- Add your organization's env-specific import map URL to this script's src  -->
+  <script id="env-import-map">
+    var params = new URLSearchParams(window.location.search);
+    // Valid envs are 'stg' and 'prod'
+    var env = params.get('env') || 'prod';
+    var script = document.createElement('script');
+    script.setAttribute('src', 'https://petermikitsh.github.io/learn-single-spa/importmap.' + env + '.json')
+    script.setAttribute('type', 'systemjs-importmap');
+    document.querySelector('#env-import-map').after(script);
+  </script>
   <% if (isLocal) { %>
-    <script type="systemjs-importmap" src="https://petermikitsh.github.io/learn-single-spa/importmap.json"></script>
     <script type="systemjs-importmap">
       {
         "imports": {
@@ -50,24 +54,20 @@
         }
       }
     </script>
-    <% } else { %>
-      <!-- Add your organization's prod import map URL to this script's src  -->
-      <script type="systemjs-importmap" src="/learn-single-spa/importmap.json"></script>
-      <% } %>
-        <!--
+  <% } %>
+  <!--
     If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
     Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
   -->
-        <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
-
-        <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
-        <% if (isLocal) { %>
-          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
-          <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
-          <% } else { %>
-            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
-            <% } %>
+  <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
+  <% if (isLocal) { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.js"></script>
+  <% } else { %>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/extras/amd.min.js"></script>
+  <% } %>
 </head>
 
 <body>
@@ -93,7 +93,7 @@
 
     if (isDevDomain) {
       window.importMapOverrides.addExternalOverride(
-        "https://petermikitsh.github.io/learn-single-spa/importmap.json"
+        "https://petermikitsh.github.io/learn-single-spa/importmap.stg.json"
       );
     }
   </script>
