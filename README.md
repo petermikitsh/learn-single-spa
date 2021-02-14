@@ -4,12 +4,25 @@ Experiment with Single SPA
 
 ## Getting Started
 
-```
-yarn install
-yarn start
-```
+Pre-req's:
 
-## Servers
+- For live development, visit `chrome://flags/#allow-insecure-localhost` and Enable.
+
+- ```sh
+  nvm use
+  yarn install
+  ```
+
+## Live Development (`yarn start:ssl`)
+
+1. Go to live site: https://petermikitsh.github.io/learn-single-spa
+2. In the console: `window.ENABLE_DEV_MODE()`
+3. Select import map panel, select app to develop. For URL, enter port number and select "Apply Override".
+4. Refresh the webpage.
+
+## Local Development (`yarn start`)
+
+Only ever access host http://0.0.0.0:9000. This URL serves all client-side routes.
 
 | Hostname     | Description           | Path                   |
 |--------------|-----------------------|------------------------|
@@ -17,6 +30,8 @@ yarn start
 | 0.0.0.0:9001 | App1 (React App)      | /learn-single-spa/app1 |
 | 0.0.0.0:9002 | App2 (Angular 11 App) | /learn-single-spa/app2 |
 | 0.0.0.0:9003 | App3 (React App)      | /learn-single-spa      |
+
+Each microfrontend server only serves its bundle.
 
 ## Releases
 

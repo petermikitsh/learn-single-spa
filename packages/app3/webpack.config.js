@@ -13,6 +13,7 @@ module.exports = (webpackConfigEnv, argv) => {
     devServer: {
       ...defaultConfig.devServer,
       port: "9003",
+      https: Boolean(process.env.HTTPS),
     },
     externals: [/^@exampleorg\//],
   };

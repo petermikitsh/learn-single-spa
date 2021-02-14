@@ -14,6 +14,10 @@ module.exports = (webpackConfigEnv, argv) => {
 
   const final = {
     ...defaultConfig,
+    devServer: {
+      ...defaultConfig.devServer,
+      https: Boolean(process.env.HTTPS),
+    },
     output: {
       ...defaultConfig.output,
       ...(!isLocal & {

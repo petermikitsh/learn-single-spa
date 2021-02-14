@@ -6,6 +6,10 @@ module.exports = (config, options) => {
 
   const final = {
     ...singleSpaWebpackConfig,
+    devServer: {
+      ...singleSpaWebpackConfig.devServer,
+      https: Boolean(process.env.HTTPS),
+    },
     entry: {
       "exampleorg-app2": singleSpaWebpackConfig.entry.main,
     },

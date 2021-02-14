@@ -13,12 +13,15 @@
     "cicd": "./scripts/cicd.sh",
     "clean": "lerna run clean --parallel",
     "deploy": "./scripts/deploy.sh",
-    "start": "lerna run start --parallel"
+    "start": "./scripts/start.js",
+    "start:ssl": "HTTPS=1 ./scripts/start.js"
   },
   "private": true,
   "devDependencies": {
     "gh-pages": "2.2.0",
-    "lerna": "^4.0.0"
+    "lerna": "^4.0.0",
+    "pidtree": "^0.5.0",
+    "prompts": "^2.4.0"
   },
   "dependencies": {
     "rimraf": "^3.0.2"
