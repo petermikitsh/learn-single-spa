@@ -40,6 +40,7 @@ module.exports = (webpackConfigEnv, argv) => {
         },
       }),
     ],
+    stats: 'errors-warnings',
   };
 
   return final;

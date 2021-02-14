@@ -13,6 +13,7 @@ module.exports = (config, options) => {
     entry: {
       "exampleorg-app2": singleSpaWebpackConfig.entry.main,
     },
+    stats: 'errors-warnings',
   };
 
   // Feel free to modify this webpack config however you'd like to
