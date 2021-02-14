@@ -41,7 +41,7 @@
     if (userSuppliedEnv && validEnvs.indexOf(userSuppliedEnv) === -1) {
       console.error('%c🚨 Invalid import map environment specified. Use one of: ' + JSON.stringify(validEnvs), "font-size: 20px");
     }
-    var resolvedEnv = userSuppliedEnv || 'prod';
+    var resolvedEnv = userSuppliedEnv || 'stg';
     var script = document.createElement('script');
     script.setAttribute('src', 'https://petermikitsh.github.io/learn-single-spa/importmap.' + resolvedEnv + '.json')
     script.setAttribute('type', 'systemjs-importmap');
