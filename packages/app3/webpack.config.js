@@ -1,4 +1,5 @@
 const singleSpaDefaults = require("webpack-config-single-spa-react-ts");
+const debug = require("debug")("app3");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -18,10 +19,12 @@ module.exports = (webpackConfigEnv, argv) => {
     externals: [/^@exampleorg\//],
     output: {
       ...defaultConfig.output,
-      filename: 'main.js',
+      filename: "main.js",
     },
-    stats: 'errors-warnings',
+    stats: "errors-warnings",
   };
+
+  debug(final);
 
   return final;
 };

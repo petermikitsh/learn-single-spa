@@ -1,5 +1,6 @@
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const debug = require("debug")("root-app");
 
 module.exports = (webpackConfigEnv, argv) => {
   const orgName = "exampleorg";
@@ -44,6 +45,8 @@ module.exports = (webpackConfigEnv, argv) => {
     ],
     stats: "errors-warnings",
   };
+
+  debug(final);
 
   return final;
 };

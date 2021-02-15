@@ -1,4 +1,5 @@
 const singleSpaDefaults = require("webpack-config-single-spa-ts");
+const debug = require("debug")("util4");
 
 module.exports = (webpackConfigEnv, argv) => {
   const defaultConfig = singleSpaDefaults({
@@ -21,6 +22,8 @@ module.exports = (webpackConfigEnv, argv) => {
     },
     stats: "errors-warnings",
   };
+
+  debug(final);
 
   return final;
 };
