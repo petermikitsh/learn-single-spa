@@ -44,6 +44,7 @@ Select environment import maps via `?env=stg` or `?env=prod`.
 | 0.0.0.0:9001 | App1 (React App)      | /learn-single-spa/app1 |
 | 0.0.0.0:9002 | App2 (Angular 11 App) | /learn-single-spa/app2 |
 | 0.0.0.0:9003 | App3 (React App)      | /learn-single-spa      |
+| 0.0.0.0:9004 | Util4 (Plain JS)      | N/A                    |
 
 Each microfrontend server only serves its bundle.
 
@@ -68,3 +69,4 @@ Import maps are defined on a per-enviornment basis, e.g: `importmap.stg.json` an
 ## Learnings
 
 - When launching a new feature app, update the import map first before deploying the root config. Otherwise, your root config will reference an app that cannot be resolved via import map.
+- Single SPA's utility module concept selects the module version at runtime via import maps. Because selection is at runtime and not compile time, there is no way to reliably type a `System.import` call. Typings are a compile time construct. See https://github.com/single-spa/single-spa.js.org/issues/361. The best workaround might be to use ES Modules (which are compile time) instead of browser modules (which are runtime).
