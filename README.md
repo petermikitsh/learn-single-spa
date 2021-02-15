@@ -1,3 +1,5 @@
+> 🚀 Demo: http://petermikitsh.github.io/learn-single-spa/ 🚀
+
 # learn-single-spa
 
 Experiment with Single SPA
