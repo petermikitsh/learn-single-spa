@@ -18,10 +18,12 @@
   },
   "private": true,
   "devDependencies": {
+    "debug": "^4.3.1",
     "gh-pages": "^3.1.0",
     "lerna": "^4.0.0",
     "pidtree": "^0.5.0",
-    "prompts": "^2.4.0"
+    "prompts": "^2.4.0",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "rimraf": "^3.0.2"
