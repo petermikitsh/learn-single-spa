@@ -8,6 +8,7 @@ const portMaps = {
   app1: 9001,
   app2: 9002,
   app3: 9003,
+  util4: 9004,
 };
 
 (async () => {
@@ -17,11 +18,10 @@ const portMaps = {
       name: "featureApps",
       message: "Choose Feature App(s) to work on:",
       instructions: false,
-      choices: [
-        { title: `app1 (Port ${portMaps.app1})`, value: "app1" },
-        { title: `app2 (Port ${portMaps.app2})`, value: "app2" },
-        { title: `app3 (Port ${portMaps.app3})`, value: "app3" },
-      ],
+      choices: Object.entries(portMaps).map(([appName, portNumber]) => ({
+        title: `${appName} (Port ${portNumber})`,
+        value: appName,
+      })),
     },
   ]);
 
