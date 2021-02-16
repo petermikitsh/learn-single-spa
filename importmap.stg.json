@@ -4,6 +4,6 @@
     "@exampleorg/app1": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app1/0.1.3/main.js",
     "@exampleorg/app2": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app2/0.1.3/main.js",
     "@exampleorg/app3": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app3/0.1.3/main.js",
-    "@exampleorg/util4": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/util4/0.1.3/main.js"
+    "@exampleorg/util4": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/util4/0.1.4/main.js"
   }
 }
