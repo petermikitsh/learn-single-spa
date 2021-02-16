@@ -11,7 +11,8 @@
     "format": "prettier --write './**'",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
-    "coverage": "cross-env BABEL_ENV=test jest --coverage"
+    "coverage": "cross-env BABEL_ENV=test jest --coverage",
+    "version": "./scripts/version.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
