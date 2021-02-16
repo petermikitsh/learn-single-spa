@@ -13,8 +13,7 @@ Pre-req's:
 
 - ```sh
   nvm use
-  npm i -g npm@7.5.4
-  npm install
+  yarn install
   ```
 
 ## Two Development modes
@@ -22,17 +21,17 @@ Pre-req's:
 - **Live Development**: Navigate to deployed server, and update feature app(s) to point to local servers
 - **Local Development**: Traditional setup
 
-### ⭐️ Live Development (`npm run start:https`)
+### ⭐️ Live Development (`yarn run start:https`)
 
 1. Go to live site: https://petermikitsh.github.io/learn-single-spa
 2. In the console: `window.ENABLE_DEV_MODE()`
-3. In your terminal, select your feature app with `npm run start:https` (note the port number).
+3. In your terminal, select your feature app with `yarn run start:https` (note the port number).
 4. Select import map panel, select app to develop. For URL, enter port number and select "Apply Override".
 5. Refresh the webpage.
 
-### Local Development (`npm run start`)
+### Local Development (`yarn run start`)
 
-1. Run `npm run start`
+1. Run `yarn run start`
 2. In the CLI, select apps to run. Import maps for the selected apps will point to your local webpack servers. All remaining apps will use staging import maps.
 3. Go to https://0.0.0.0:9000/
 
@@ -57,7 +56,7 @@ Each microfrontend server only serves its bundle.
 Releases are pushed to the `gh-pages` branch. In this example project, `gh-pages` is analogous to a CDN.
 
 ```
-npm run cicd
+yarn run cicd
 ```
 
 ## Deployments
@@ -68,7 +67,7 @@ Import maps are defined on a per-enviornment basis, e.g: `importmap.stg.json` an
 - Host inspection
 
 1. Update the `packages/imports-maps/importmap.{env}.json` with versions to use.
-2. Run `npm run deploy`. **All** import map files will be deployed.
+2. Run `yarn run deploy`. **All** import map files will be deployed.
 
 ## Learnings
 
