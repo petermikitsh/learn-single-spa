@@ -27,8 +27,8 @@ else
     # echo "Creating canary release; not in CI environment."
     # RELEASE_NAME="$CURR_VERSION-canary-$GIT_SHA-$RANDOM"
 
-    yarn clean
-    yarn build
+    npm run clean
+    npm run build
 
     npx --no-install lerna version \
       --conventional-commits \

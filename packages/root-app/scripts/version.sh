@@ -6,6 +6,6 @@ set -x
 # Bail on first error
 set -e
 
-yarn run gh-pages --add \
+npm run gh-pages --add \
   --dist dist \
   --dest .

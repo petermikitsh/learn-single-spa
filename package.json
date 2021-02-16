@@ -1,13 +1,8 @@
 {
   "name": "root",
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ],
-    "nohoist": [
-      "**webpack**"
-    ]
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "lerna run build --parallel",
     "cicd": "./scripts/cicd.sh",
