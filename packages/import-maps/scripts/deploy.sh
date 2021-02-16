@@ -9,7 +9,7 @@ set -e
 BASE_DIR=$(dirname $0)
 SUBPACKAGE_DIR="$(dirname $( cd "$BASE_DIR" ; pwd -P ))"
 
-npm run gh-pages --add \
+npx --no-install gh-pages --add \
   --dist $SUBPACKAGE_DIR \
   --src "importmap.*.json" \
   --dest .

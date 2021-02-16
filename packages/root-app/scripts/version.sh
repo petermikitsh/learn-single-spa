@@ -6,6 +6,6 @@ set -x
 # Bail on first error
 set -e
 
-npm run gh-pages --add \
+npx --no-install gh-pages --add \
   --dist dist \
   --dest .
