@@ -1,8 +1,8 @@
 {
   "imports": {
     "@exampleorg/root-config": "https://petermikitsh.github.io/learn-single-spa/exampleorg-root-config.js",
-    "@exampleorg/app1": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app1/0.0.6/exampleorg-app1.js",
-    "@exampleorg/app2": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app2/0.0.6/exampleorg-app2.js",
-    "@exampleorg/app3": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app3/0.0.6/exampleorg-app3.js"
+    "@exampleorg/app1": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app1/0.1.2/main.js",
+    "@exampleorg/app2": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app2/0.1.2/main.js",
+    "@exampleorg/app3": "https://petermikitsh.github.io/learn-single-spa/@exampleorg/app3/0.1.2/main.js"
   }
 }
