@@ -8,6 +8,7 @@ Experiment with Single SPA
 
 Pre-req's:
 
+- Git version >= 2.22
 - For live development, visit `chrome://flags/#allow-insecure-localhost` and Enable.
 
 - ```sh
